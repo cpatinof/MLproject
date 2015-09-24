@@ -34,7 +34,7 @@ The data is already partitioned into training and testing sets. We will hold the
 
 * Exclude indicator variables (first 7 columns of the datasets)
 * Exclude near zero variance columns (a total of 94 variables, including the target, are left)
-* Exclue columns with almost all instances missing (53 columns are left after this step)
+* Exclude columns with almost all instances missing (53 columns are left after this step)
 * Impute remaining instances using KNN imputation, if necessary
 * Create an alternative PCA set with the principal components that explain 80% of the variability in all features
 
@@ -78,7 +78,7 @@ testPC <- predict(preProc,f.testing[,-53])
 
 # EDA
 
-In this section we perform a quick Exploratory Data Analysis on the training set, using the two principal components and coloring the points in the graph by the labels. We can notice a complex structure. Aparentily, there are 5 clusters of cases. Given such structure, an ensemble method might be a good approach in order to train a complex decision boundary.
+In this section we perform a quick Exploratory Data Analysis on the training set, using the two principal components and coloring the points in the graph by the labels. We can notice a complex structure. Aparently, there are 5 clusters of cases. Given such structure, an ensemble method might be a good approach in order to train a complex decision boundary.
 
 ```{r, eda, warning=FALSE, message=FALSE, comment="", echo=FALSE}
 qplot(trainPC[,1],trainPC[,2],colour=f.training$classe, data=trainPC)
